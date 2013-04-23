@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE4C34451711C50D0071A25D /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C34441711C50D0071A25D /* ShowDetailViewController.m */; };
+		CE663E55171ACBAD00F3EABD /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = CE663E54171ACBAD00F3EABD /* Restaurant.m */; };
+		CE80616A17046AB800DEEBE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80616917046AB800DEEBE8 /* UIKit.framework */; };
+		CE80616C17046AB800DEEBE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80616B17046AB800DEEBE8 /* Foundation.framework */; };
+		CE80616E17046AB800DEEBE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80616D17046AB800DEEBE8 /* CoreGraphics.framework */; };
+		CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE80617217046AB800DEEBE8 /* InfoPlist.strings */; };
+		CE80617617046AB800DEEBE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80617517046AB800DEEBE8 /* main.m */; };
+		CE80617A17046AB800DEEBE8 /* shakeparisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */; };
+		CE80617C17046AB800DEEBE8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80617B17046AB800DEEBE8 /* Default.png */; };
+		CE80617E17046AB800DEEBE8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80617D17046AB800DEEBE8 /* Default@2x.png */; };
+		CE80618017046AB800DEEBE8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80617F17046AB800DEEBE8 /* Default-568h@2x.png */; };
+		CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */; };
+		CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */; };
+		CE80618917046AB800DEEBE8 /* shakeparisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80618817046AB800DEEBE8 /* shakeparisViewController.m */; };
+		CE80619117046EB200DEEBE8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80619017046EB200DEEBE8 /* MapViewController.m */; };
+		CE80619317046F6500DEEBE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80619217046F6500DEEBE8 /* CoreLocation.framework */; };
+		CE80619517046F6D00DEEBE8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80619417046F6D00DEEBE8 /* MapKit.framework */; };
+		CE80619C170473A400DEEBE8 /* RestauAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80619B170473A400DEEBE8 /* RestauAnnotation.m */; };
+		CE82CE07171B208700CB26A8 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE82CE06171B208700CB26A8 /* iAd.framework */; };
+		CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7B1715DEA60024E88B /* 地图模式.tif */; };
+		CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7C1715DEA60024E88B /* 列表模式.tif */; };
+		CE845A801715DEA60024E88B /* 相关帮助.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7D1715DEA60024E88B /* 相关帮助.tif */; };
+		CE845A821716118A0024E88B /* shakeparis-export.json in Resources */ = {isa = PBXBuildFile; fileRef = CE845A811716118A0024E88B /* shakeparis-export.json */; };
+		CE9A7380171EF5350042C5D1 /* restauData.xml in Resources */ = {isa = PBXBuildFile; fileRef = CE9A737F171EF5350042C5D1 /* restauData.xml */; };
+		CE9BDB761705CB650005BB5C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB751705CB650005BB5C /* Firebase.framework */; };
+		CE9BDB781705CB990005BB5C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB771705CB990005BB5C /* libicucore.dylib */; };
+		CE9BDB7A1705CBA40005BB5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB791705CBA40005BB5C /* CFNetwork.framework */; };
+		CE9BDB7C1705CBB50005BB5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB7B1705CBB50005BB5C /* Security.framework */; };
+		CE9BDB7F170C358D0005BB5C /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE9BDB7D170C358D0005BB5C /* Restaurant.xcdatamodeld */; };
+		CE9BDB88170C395E0005BB5C /* Restaurant+Firebase.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */; };
+		CE9BDB90170C5C900005BB5C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB8F170C5C900005BB5C /* CoreData.framework */; };
+		CE9EBA42171460B900E0C044 /* 20080405154401434.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9EBA41171460B900E0C044 /* 20080405154401434.png */; };
+		CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA441714635B00E0C044 /* neweuropeViewController.m */; };
+		CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */; };
+		CEB5886417204F5C00C6D88A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB5886317204F5C00C6D88A /* AudioToolbox.framework */; };
+		CEB588661726A36200C6D88A /* musiqueRestau.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEB588651726A36200C6D88A /* musiqueRestau.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE4C34431711C50D0071A25D /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailViewController.h; sourceTree = "<group>"; };
+		CE4C34441711C50D0071A25D /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailViewController.m; sourceTree = "<group>"; };
+		CE663E53171ACBAD00F3EABD /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		CE663E54171ACBAD00F3EABD /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		CE80616517046AB800DEEBE8 /* shake paris v1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shake paris v1.3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE80616917046AB800DEEBE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE80616B17046AB800DEEBE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE80616D17046AB800DEEBE8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE80617117046AB800DEEBE8 /* shake paris v1.3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "shake paris v1.3-Info.plist"; sourceTree = "<group>"; };
+		CE80617317046AB800DEEBE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE80617517046AB800DEEBE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE80617717046AB800DEEBE8 /* shake paris v1.3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shake paris v1.3-Prefix.pch"; sourceTree = "<group>"; };
+		CE80617817046AB800DEEBE8 /* shakeparisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shakeparisAppDelegate.h; sourceTree = "<group>"; };
+		CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shakeparisAppDelegate.m; sourceTree = "<group>"; };
+		CE80617B17046AB800DEEBE8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CE80617D17046AB800DEEBE8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CE80617F17046AB800DEEBE8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CE80618217046AB800DEEBE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		CE80618517046AB800DEEBE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		CE80618717046AB800DEEBE8 /* shakeparisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shakeparisViewController.h; sourceTree = "<group>"; };
+		CE80618817046AB800DEEBE8 /* shakeparisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shakeparisViewController.m; sourceTree = "<group>"; };
+		CE80618F17046EB200DEEBE8 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		CE80619017046EB200DEEBE8 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		CE80619217046F6500DEEBE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE80619417046F6D00DEEBE8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE80619A170473A400DEEBE8 /* RestauAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestauAnnotation.h; sourceTree = "<group>"; };
+		CE80619B170473A400DEEBE8 /* RestauAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestauAnnotation.m; sourceTree = "<group>"; };
+		CE82CE06171B208700CB26A8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		CE845A7B1715DEA60024E88B /* 地图模式.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "地图模式.tif"; sourceTree = "<group>"; };
+		CE845A7C1715DEA60024E88B /* 列表模式.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "列表模式.tif"; sourceTree = "<group>"; };
+		CE845A7D1715DEA60024E88B /* 相关帮助.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "相关帮助.tif"; sourceTree = "<group>"; };
+		CE845A811716118A0024E88B /* shakeparis-export.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shakeparis-export.json"; sourceTree = "<group>"; };
+		CE9A737F171EF5350042C5D1 /* restauData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = restauData.xml; sourceTree = "<group>"; };
+		CE9BDB751705CB650005BB5C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../Firebase.framework; sourceTree = "<group>"; };
+		CE9BDB771705CB990005BB5C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		CE9BDB791705CBA40005BB5C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CE9BDB7B1705CBB50005BB5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE9BDB7E170C358D0005BB5C /* Restaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restaurant.xcdatamodel; sourceTree = "<group>"; };
+		CE9BDB86170C395D0005BB5C /* Restaurant+Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Restaurant+Firebase.h"; path = "../Restaurant+Firebase.h"; sourceTree = "<group>"; };
+		CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Restaurant+Firebase.m"; path = "../Restaurant+Firebase.m"; sourceTree = "<group>"; };
+		CE9BDB8F170C5C900005BB5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE9EBA41171460B900E0C044 /* 20080405154401434.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20080405154401434.png; sourceTree = "<group>"; };
+		CE9EBA431714635B00E0C044 /* neweuropeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neweuropeViewController.h; sourceTree = "<group>"; };
+		CE9EBA441714635B00E0C044 /* neweuropeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neweuropeViewController.m; sourceTree = "<group>"; };
+		CE9EBA461715B00300E0C044 /* restaurantTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restaurantTableViewController.h; sourceTree = "<group>"; };
+		CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = restaurantTableViewController.m; sourceTree = "<group>"; };
+		CEB5886317204F5C00C6D88A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CEB588651726A36200C6D88A /* musiqueRestau.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = musiqueRestau.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE80616217046AB800DEEBE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB5886417204F5C00C6D88A /* AudioToolbox.framework in Frameworks */,
+				CE82CE07171B208700CB26A8 /* iAd.framework in Frameworks */,
+				CE9BDB90170C5C900005BB5C /* CoreData.framework in Frameworks */,
+				CE9BDB7C1705CBB50005BB5C /* Security.framework in Frameworks */,
+				CE9BDB7A1705CBA40005BB5C /* CFNetwork.framework in Frameworks */,
+				CE9BDB781705CB990005BB5C /* libicucore.dylib in Frameworks */,
+				CE80619517046F6D00DEEBE8 /* MapKit.framework in Frameworks */,
+				CE80619317046F6500DEEBE8 /* CoreLocation.framework in Frameworks */,
+				CE80616A17046AB800DEEBE8 /* UIKit.framework in Frameworks */,
+				CE80616C17046AB800DEEBE8 /* Foundation.framework in Frameworks */,
+				CE80616E17046AB800DEEBE8 /* CoreGraphics.framework in Frameworks */,
+				CE9BDB761705CB650005BB5C /* Firebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE80615A17046AB800DEEBE8 = {
+			isa = PBXGroup;
+			children = (
+				CEB5886317204F5C00C6D88A /* AudioToolbox.framework */,
+				CE80616F17046AB800DEEBE8 /* shake paris v1.3 */,
+				CE80616817046AB800DEEBE8 /* Frameworks */,
+				CE80616617046AB800DEEBE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE80616617046AB800DEEBE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE80616517046AB800DEEBE8 /* shake paris v1.3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE80616817046AB800DEEBE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE82CE06171B208700CB26A8 /* iAd.framework */,
+				CE9BDB8F170C5C900005BB5C /* CoreData.framework */,
+				CE9BDB7B1705CBB50005BB5C /* Security.framework */,
+				CE9BDB791705CBA40005BB5C /* CFNetwork.framework */,
+				CE9BDB771705CB990005BB5C /* libicucore.dylib */,
+				CE80619417046F6D00DEEBE8 /* MapKit.framework */,
+				CE80619217046F6500DEEBE8 /* CoreLocation.framework */,
+				CE9BDB751705CB650005BB5C /* Firebase.framework */,
+				CE80616917046AB800DEEBE8 /* UIKit.framework */,
+				CE80616B17046AB800DEEBE8 /* Foundation.framework */,
+				CE80616D17046AB800DEEBE8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE80616F17046AB800DEEBE8 /* shake paris v1.3 */ = {
+			isa = PBXGroup;
+			children = (
+				CE9BDB86170C395D0005BB5C /* Restaurant+Firebase.h */,
+				CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */,
+				CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */,
+				CE9EBA461715B00300E0C044 /* restaurantTableViewController.h */,
+				CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */,
+				CE80618F17046EB200DEEBE8 /* MapViewController.h */,
+				CE80619017046EB200DEEBE8 /* MapViewController.m */,
+				CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */,
+				CE80618717046AB800DEEBE8 /* shakeparisViewController.h */,
+				CE80618817046AB800DEEBE8 /* shakeparisViewController.m */,
+				CE80617017046AB800DEEBE8 /* Supporting Files */,
+				CE80619A170473A400DEEBE8 /* RestauAnnotation.h */,
+				CE80619B170473A400DEEBE8 /* RestauAnnotation.m */,
+				CE9BDB7D170C358D0005BB5C /* Restaurant.xcdatamodeld */,
+				CE663E53171ACBAD00F3EABD /* Restaurant.h */,
+				CE663E54171ACBAD00F3EABD /* Restaurant.m */,
+				CE4C34431711C50D0071A25D /* ShowDetailViewController.h */,
+				CE4C34441711C50D0071A25D /* ShowDetailViewController.m */,
+				CE9EBA431714635B00E0C044 /* neweuropeViewController.h */,
+				CE9EBA441714635B00E0C044 /* neweuropeViewController.m */,
+			);
+			path = "shake paris v1.3";
+			sourceTree = "<group>";
+		};
+		CE80617017046AB800DEEBE8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEB588651726A36200C6D88A /* musiqueRestau.wav */,
+				CE845A811716118A0024E88B /* shakeparis-export.json */,
+				CE845A7B1715DEA60024E88B /* 地图模式.tif */,
+				CE845A7C1715DEA60024E88B /* 列表模式.tif */,
+				CE845A7D1715DEA60024E88B /* 相关帮助.tif */,
+				CE9EBA41171460B900E0C044 /* 20080405154401434.png */,
+				CE80617817046AB800DEEBE8 /* shakeparisAppDelegate.h */,
+				CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */,
+				CE80617117046AB800DEEBE8 /* shake paris v1.3-Info.plist */,
+				CE80617217046AB800DEEBE8 /* InfoPlist.strings */,
+				CE80617517046AB800DEEBE8 /* main.m */,
+				CE80617717046AB800DEEBE8 /* shake paris v1.3-Prefix.pch */,
+				CE80617B17046AB800DEEBE8 /* Default.png */,
+				CE80617D17046AB800DEEBE8 /* Default@2x.png */,
+				CE80617F17046AB800DEEBE8 /* Default-568h@2x.png */,
+				CE9A737F171EF5350042C5D1 /* restauData.xml */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE80616417046AB800DEEBE8 /* shake paris v1.3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE80618C17046AB800DEEBE8 /* Build configuration list for PBXNativeTarget "shake paris v1.3" */;
+			buildPhases = (
+				CE80616117046AB800DEEBE8 /* Sources */,
+				CE80616217046AB800DEEBE8 /* Frameworks */,
+				CE80616317046AB800DEEBE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "shake paris v1.3";
+			productName = "shake paris v1.3";
+			productReference = CE80616517046AB800DEEBE8 /* shake paris v1.3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE80615C17046AB800DEEBE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = shakeparis;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "com.bowenstudio.*";
+			};
+			buildConfigurationList = CE80615F17046AB800DEEBE8 /* Build configuration list for PBXProject "shake paris v1.3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE80615A17046AB800DEEBE8;
+			productRefGroup = CE80616617046AB800DEEBE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE80616417046AB800DEEBE8 /* shake paris v1.3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE80616317046AB800DEEBE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */,
+				CE80617C17046AB800DEEBE8 /* Default.png in Resources */,
+				CE80617E17046AB800DEEBE8 /* Default@2x.png in Resources */,
+				CE80618017046AB800DEEBE8 /* Default-568h@2x.png in Resources */,
+				CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */,
+				CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */,
+				CE9EBA42171460B900E0C044 /* 20080405154401434.png in Resources */,
+				CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */,
+				CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */,
+				CE845A801715DEA60024E88B /* 相关帮助.tif in Resources */,
+				CE845A821716118A0024E88B /* shakeparis-export.json in Resources */,
+				CE9A7380171EF5350042C5D1 /* restauData.xml in Resources */,
+				CEB588661726A36200C6D88A /* musiqueRestau.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE80616117046AB800DEEBE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE80617617046AB800DEEBE8 /* main.m in Sources */,
+				CE80617A17046AB800DEEBE8 /* shakeparisAppDelegate.m in Sources */,
+				CE80618917046AB800DEEBE8 /* shakeparisViewController.m in Sources */,
+				CE80619117046EB200DEEBE8 /* MapViewController.m in Sources */,
+				CE80619C170473A400DEEBE8 /* RestauAnnotation.m in Sources */,
+				CE9BDB7F170C358D0005BB5C /* Restaurant.xcdatamodeld in Sources */,
+				CE9BDB88170C395E0005BB5C /* Restaurant+Firebase.m in Sources */,
+				CE4C34451711C50D0071A25D /* ShowDetailViewController.m in Sources */,
+				CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */,
+				CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */,
+				CE663E55171ACBAD00F3EABD /* Restaurant.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE80617217046AB800DEEBE8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE80617317046AB800DEEBE8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE80618217046AB800DEEBE8 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE80618517046AB800DEEBE8 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE80618A17046AB800DEEBE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE80618B17046AB800DEEBE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE80618D17046AB800DEEBE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shake paris v1.3/shake paris v1.3-Prefix.pch";
+				INFOPLIST_FILE = "shake paris v1.3/shake paris v1.3-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE80618E17046AB800DEEBE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shake paris v1.3/shake paris v1.3-Prefix.pch";
+				INFOPLIST_FILE = "shake paris v1.3/shake paris v1.3-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE80615F17046AB800DEEBE8 /* Build configuration list for PBXProject "shake paris v1.3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE80618A17046AB800DEEBE8 /* Debug */,
+				CE80618B17046AB800DEEBE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE80618C17046AB800DEEBE8 /* Build configuration list for PBXNativeTarget "shake paris v1.3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE80618D17046AB800DEEBE8 /* Debug */,
+				CE80618E17046AB800DEEBE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE9BDB7D170C358D0005BB5C /* Restaurant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE9BDB7E170C358D0005BB5C /* Restaurant.xcdatamodel */,
+			);
+			currentVersion = CE9BDB7E170C358D0005BB5C /* Restaurant.xcdatamodel */;
+			path = Restaurant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CE80615C17046AB800DEEBE8 /* Project object */;
+}

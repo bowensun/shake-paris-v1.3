@@ -1,0 +1,23 @@
+[ {
+  "type" : "火锅自助",
+  "name" : "五彩楼",
+  "imageURL" : "http://live.xineurope.com/uploads/pictures/2012-09/thumb_48_1347054152.jpg",
+  "information" : "店内主营火锅，烧烤和Wok自助，食材丰富，选择多样，您可根据自己的喜好选择火锅+Wok或者烧烤+Wok自助, 价格仅需18.80欧元。店主特意引进专业设备，为客人提供新鲜可口的日本鲜扎啤酒，价格实惠。",
+  "latitude" : "48.8686082",
+  "telephone" : "01.53.72.90.16",
+  "xineuropeURL" : "http://live.xineurope.com/item.php?act=detail&id=1899",
+  "longitude" : "2.360009",
+  "businessHours" : "11h45—15h00 供应自助餐(Wok)19h00—凌晨 和 周六周日中午 供应火锅/烧烤（任选一）+ wok 自助 周一和周二中午休息",
+  "address" : "48, Rue René Boulanger, 75010, Paris"
+}, {
+  "type" : "山西菜,KTV",
+  "name" : "山西饭店",
+  "imageURL" : "http://live.xineurope.com/uploads/pictures/2012-03/thumb_36_1332881929.jpg",
+  "information" : "山西饭店坐落在巴黎老佛爷商圈附近，街区繁华，环境安全新近开张，欢迎巴黎各位吃客的光临哟~~~",
+  "latitude" : "48.8764808",
+  "telephone" : "09.52.67.26.57",
+  "xineuropeURL" : "http://live.xineurope.com/item.php?act=detail&id=3132",
+  "longitude" : "2.3418723",
+  "businessHours" : "12时至15时，19时-23时，周一全天休息 周日中午照常营业",
+  "address" : "17,Rue Lamartine, 75009, Paris"
+} ]
