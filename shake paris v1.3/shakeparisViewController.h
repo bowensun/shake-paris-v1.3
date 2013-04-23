@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "Restaurant.h"
 @interface shakeparisViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *lableTest;
+@property (strong, nonatomic) NSArray *restaurants;
+@property (weak , nonatomic) Restaurant *restaurant;
 @end

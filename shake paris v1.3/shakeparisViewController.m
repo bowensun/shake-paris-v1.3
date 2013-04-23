@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.lableTest.text = @"begin";
+    self.restaurants = [Restaurant getRestaurants];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -50,7 +50,7 @@
 {
     if(motion == UIEventSubtypeMotionShake)
     {
-        self.lableTest.text = @"shaking";
+        
     }
     
 }
@@ -58,16 +58,61 @@
 -(void) motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent*) event
 {
     if(motion == UIEventSubtypeMotionShake)
-        self.lableTest.text = @"shaked";
+    {
+        
+    }
 }
 
 -(void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*) event
 {
     if(motion == UIEventSubtypeMotionShake)
     {
-        self.lableTest.text = @"shake";
         [self vibrate];
+        [self playSystemSound];
+        [self alertInit];
     }
+}
+
+-(void) alertInit
+{
+    self.restaurant = [self randomRestaurant];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您摇到了" message:self.restaurant.name delegate:self cancelButtonTitle:@"重新摇" otherButtonTitles:@"前去查看", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self performSegueWithIdentifier:@"showDetailByShake" sender:self];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showDetailByShake"]) {
+        [segue.destinationViewController initWithRestaurant:self.restaurant];
+    }
+}
+
+//随即餐馆获取
+-(Restaurant *) randomRestaurant
+{
+    int x = arc4random() % [self.restaurants count];
+    return [self.restaurants objectAtIndex:x];
+    
+}
+//声音函数
+- (void)playSystemSound
+{
+    NSURL* system_sound_url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                                      pathForResource:@"musiqueRestau" ofType:@"wav"]];
+    SystemSoundID system_sound_id;
+    AudioServicesCreateSystemSoundID(
+                                     (__bridge CFURLRef)system_sound_url,
+                                     &system_sound_id
+                                     );
+    // Play the System Sound
+    AudioServicesPlaySystemSound(system_sound_id);
 }
 
 //震动函数
