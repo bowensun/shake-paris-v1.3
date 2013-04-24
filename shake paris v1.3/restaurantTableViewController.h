@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <iAd/iAd.h>
 
-@interface restaurantTableViewController : UITableViewController<CLLocationManagerDelegate, MKMapViewDelegate, ADBannerViewDelegate>
+@interface restaurantTableViewController : UITableViewController<CLLocationManagerDelegate, MKMapViewDelegate>
 {
     ADBannerView *bannerView;
 }
@@ -24,5 +24,4 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonChangerMode;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 - (IBAction)changerMode:(id)sender;
-@property (weak, nonatomic) IBOutlet ADBannerView *bannerView;
 @end

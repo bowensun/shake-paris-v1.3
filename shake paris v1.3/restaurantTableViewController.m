@@ -14,7 +14,6 @@
 @end
 
 @implementation restaurantTableViewController
-@synthesize bannerView = _bannerView;
 
 //
 
@@ -95,8 +94,6 @@
     [self initGPS];
     [self initDistances];
     [self addRefreshViewController];
-    self.bannerView.delegate = self;
-    self.bannerView.userInteractionEnabled = YES;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -166,8 +163,8 @@
     [self.refreshControl endRefreshing];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     [self.tableView reloadData];
-    NSSortDescriptor *sortByDistance = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    self.restaurants = [self.restaurants sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByDistance]];
+    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"information" ascending:YES];
+    self.restaurants = [self.restaurants sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByName]];
     [self.spinner stopAnimating];
     self.navigationItem.rightBarButtonItem = self.buttonChangerMode;
 }

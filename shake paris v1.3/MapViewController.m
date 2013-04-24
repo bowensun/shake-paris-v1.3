@@ -18,7 +18,6 @@
 @end
 
 @implementation MapViewController
-@synthesize bannerView = _bannerView;
 @synthesize mapView = _mapView;
 @synthesize annotations= _annotations;
 @synthesize restaurants = _restaurants;
@@ -275,19 +274,16 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!self.managedObjectContext) {
-        [self useDocument];
-    }
-    
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!self.managedObjectContext) {
+        [self useDocument];
+    }
     self.mapView.delegate = self;
     self.spinner= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self currentLocation];
-    self.bannerView.delegate = self;
-    self.bannerView.userInteractionEnabled = YES;
      //NSLog(@"%d----------------------------", [self.restaurants count]);
 	
     // Do any additional setup after loading the view.

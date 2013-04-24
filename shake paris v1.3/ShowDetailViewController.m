@@ -14,7 +14,6 @@
 @end
 
 @implementation ShowDetailViewController
-@synthesize bannerView = _bannerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -60,8 +59,6 @@
 {
     [super viewDidLoad];
     [self loadRestaurantData];
-    self.bannerView.delegate = self;
-    self.bannerView.userInteractionEnabled = YES;
     
 	// Do any additional setup after loading the view.
 }
@@ -76,6 +73,7 @@
 {
     if ([segue.identifier isEqualToString:@"showInWebView"]||[segue.identifier isEqualToString:@"showInWebView2"]) {
         [segue.destinationViewController initWithUrl:self.restaurant.xineuropeURL];
+        NSLog(@"IN showdetail %@",self.restaurant.xineuropeURL);
     }
 }
 

@@ -16,8 +16,6 @@
 		CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE80617217046AB800DEEBE8 /* InfoPlist.strings */; };
 		CE80617617046AB800DEEBE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80617517046AB800DEEBE8 /* main.m */; };
 		CE80617A17046AB800DEEBE8 /* shakeparisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */; };
-		CE80617C17046AB800DEEBE8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80617B17046AB800DEEBE8 /* Default.png */; };
-		CE80617E17046AB800DEEBE8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80617D17046AB800DEEBE8 /* Default@2x.png */; };
 		CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */; };
 		CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */; };
 		CE80618917046AB800DEEBE8 /* shakeparisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80618817046AB800DEEBE8 /* shakeparisViewController.m */; };
@@ -25,6 +23,7 @@
 		CE80619317046F6500DEEBE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80619217046F6500DEEBE8 /* CoreLocation.framework */; };
 		CE80619517046F6D00DEEBE8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80619417046F6D00DEEBE8 /* MapKit.framework */; };
 		CE80619C170473A400DEEBE8 /* RestauAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80619B170473A400DEEBE8 /* RestauAnnotation.m */; };
+		CE829F291727ECDA00C85646 /* helpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE829F281727ECDA00C85646 /* helpViewController.m */; };
 		CE82CE07171B208700CB26A8 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE82CE06171B208700CB26A8 /* iAd.framework */; };
 		CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7B1715DEA60024E88B /* 地图模式.tif */; };
 		CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7C1715DEA60024E88B /* 列表模式.tif */; };
@@ -41,6 +40,9 @@
 		CE9EBA42171460B900E0C044 /* 20080405154401434.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9EBA41171460B900E0C044 /* 20080405154401434.png */; };
 		CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA441714635B00E0C044 /* neweuropeViewController.m */; };
 		CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */; };
+		CEA18FC81727F51A00700726 /* helpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA18FC71727F51A00700726 /* helpDetailViewController.m */; };
+		CEA18FCB1727FA9C00700726 /* helpListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA18FCA1727FA9C00700726 /* helpListViewController.m */; };
+		CEA18FCD172805ED00700726 /* chat_exclamation.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA18FCC172805ED00700726 /* chat_exclamation.png */; };
 		CEB5886417204F5C00C6D88A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB5886317204F5C00C6D88A /* AudioToolbox.framework */; };
 		CEB588661726A36200C6D88A /* musiqueRestau.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEB588651726A36200C6D88A /* musiqueRestau.wav */; };
 		CEB588681726C16400C6D88A /* 摇一摇图标.tif in Resources */ = {isa = PBXBuildFile; fileRef = CEB588671726C16400C6D88A /* 摇一摇图标.tif */; };
@@ -49,7 +51,6 @@
 		CEB5887C1726D09D00C6D88A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB5887B1726D09D00C6D88A /* Default.png */; };
 		CEB5887E1726D0A600C6D88A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB5887D1726D0A600C6D88A /* Default@2x.png */; };
 		CEB588801726D0AD00C6D88A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */; };
-		CEB588811726D2C500C6D88A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80617F17046AB800DEEBE8 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		CE80619417046F6D00DEEBE8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CE80619A170473A400DEEBE8 /* RestauAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestauAnnotation.h; sourceTree = "<group>"; };
 		CE80619B170473A400DEEBE8 /* RestauAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestauAnnotation.m; sourceTree = "<group>"; };
+		CE829F271727ECDA00C85646 /* helpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpViewController.h; sourceTree = "<group>"; };
+		CE829F281727ECDA00C85646 /* helpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpViewController.m; sourceTree = "<group>"; };
 		CE82CE06171B208700CB26A8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		CE845A7B1715DEA60024E88B /* 地图模式.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "地图模式.tif"; sourceTree = "<group>"; };
 		CE845A7C1715DEA60024E88B /* 列表模式.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "列表模式.tif"; sourceTree = "<group>"; };
@@ -100,14 +103,19 @@
 		CE9EBA441714635B00E0C044 /* neweuropeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neweuropeViewController.m; sourceTree = "<group>"; };
 		CE9EBA461715B00300E0C044 /* restaurantTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restaurantTableViewController.h; sourceTree = "<group>"; };
 		CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = restaurantTableViewController.m; sourceTree = "<group>"; };
+		CEA18FC61727F51A00700726 /* helpDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpDetailViewController.h; sourceTree = "<group>"; };
+		CEA18FC71727F51A00700726 /* helpDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpDetailViewController.m; sourceTree = "<group>"; };
+		CEA18FC91727FA9C00700726 /* helpListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpListViewController.h; sourceTree = "<group>"; };
+		CEA18FCA1727FA9C00700726 /* helpListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpListViewController.m; sourceTree = "<group>"; };
+		CEA18FCC172805ED00700726 /* chat_exclamation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_exclamation.png; sourceTree = "<group>"; };
 		CEB5886317204F5C00C6D88A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CEB588651726A36200C6D88A /* musiqueRestau.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = musiqueRestau.wav; sourceTree = "<group>"; };
 		CEB588671726C16400C6D88A /* 摇一摇图标.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "摇一摇图标.tif"; sourceTree = "<group>"; };
-		CEB588771726CCE200C6D88A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		CEB588791726CCF200C6D88A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		CEB5887B1726D09D00C6D88A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		CEB5887D1726D0A600C6D88A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CEB588771726CCE200C6D88A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		CEB588791726CCF200C6D88A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		CEB5887B1726D09D00C6D88A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		CEB5887D1726D0A600C6D88A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,11 +144,6 @@
 		CE80615A17046AB800DEEBE8 = {
 			isa = PBXGroup;
 			children = (
-				CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */,
-				CEB5887D1726D0A600C6D88A /* Default@2x.png */,
-				CEB5887B1726D09D00C6D88A /* Default.png */,
-				CEB588791726CCF200C6D88A /* Icon@2x.png */,
-				CEB588771726CCE200C6D88A /* Icon.png */,
 				CEB5886317204F5C00C6D88A /* AudioToolbox.framework */,
 				CE80616F17046AB800DEEBE8 /* shake paris v1.3 */,
 				CE80616817046AB800DEEBE8 /* Frameworks */,
@@ -177,9 +180,17 @@
 		CE80616F17046AB800DEEBE8 /* shake paris v1.3 */ = {
 			isa = PBXGroup;
 			children = (
+				CE663E53171ACBAD00F3EABD /* Restaurant.h */,
+				CE663E54171ACBAD00F3EABD /* Restaurant.m */,
 				CE9BDB86170C395D0005BB5C /* Restaurant+Firebase.h */,
 				CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */,
 				CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */,
+				CEA18FC91727FA9C00700726 /* helpListViewController.h */,
+				CEA18FCA1727FA9C00700726 /* helpListViewController.m */,
+				CE829F271727ECDA00C85646 /* helpViewController.h */,
+				CE829F281727ECDA00C85646 /* helpViewController.m */,
+				CEA18FC61727F51A00700726 /* helpDetailViewController.h */,
+				CEA18FC71727F51A00700726 /* helpDetailViewController.m */,
 				CE9EBA461715B00300E0C044 /* restaurantTableViewController.h */,
 				CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */,
 				CE80618F17046EB200DEEBE8 /* MapViewController.h */,
@@ -187,16 +198,14 @@
 				CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */,
 				CE80618717046AB800DEEBE8 /* shakeparisViewController.h */,
 				CE80618817046AB800DEEBE8 /* shakeparisViewController.m */,
-				CE80617017046AB800DEEBE8 /* Supporting Files */,
 				CE80619A170473A400DEEBE8 /* RestauAnnotation.h */,
 				CE80619B170473A400DEEBE8 /* RestauAnnotation.m */,
 				CE9BDB7D170C358D0005BB5C /* Restaurant.xcdatamodeld */,
-				CE663E53171ACBAD00F3EABD /* Restaurant.h */,
-				CE663E54171ACBAD00F3EABD /* Restaurant.m */,
 				CE4C34431711C50D0071A25D /* ShowDetailViewController.h */,
 				CE4C34441711C50D0071A25D /* ShowDetailViewController.m */,
 				CE9EBA431714635B00E0C044 /* neweuropeViewController.h */,
 				CE9EBA441714635B00E0C044 /* neweuropeViewController.m */,
+				CE80617017046AB800DEEBE8 /* Supporting Files */,
 			);
 			path = "shake paris v1.3";
 			sourceTree = "<group>";
@@ -204,6 +213,12 @@
 		CE80617017046AB800DEEBE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEA18FCC172805ED00700726 /* chat_exclamation.png */,
+				CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */,
+				CEB5887D1726D0A600C6D88A /* Default@2x.png */,
+				CEB5887B1726D09D00C6D88A /* Default.png */,
+				CEB588791726CCF200C6D88A /* Icon@2x.png */,
+				CEB588771726CCE200C6D88A /* Icon.png */,
 				CE28FD691726D69E00168087 /* 铁塔2.png */,
 				CEB588671726C16400C6D88A /* 摇一摇图标.tif */,
 				CEB588651726A36200C6D88A /* musiqueRestau.wav */,
@@ -279,8 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */,
-				CE80617C17046AB800DEEBE8 /* Default.png in Resources */,
-				CE80617E17046AB800DEEBE8 /* Default@2x.png in Resources */,
 				CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */,
 				CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */,
 				CE9EBA42171460B900E0C044 /* 20080405154401434.png in Resources */,
@@ -296,8 +309,8 @@
 				CEB5887C1726D09D00C6D88A /* Default.png in Resources */,
 				CEB5887E1726D0A600C6D88A /* Default@2x.png in Resources */,
 				CEB588801726D0AD00C6D88A /* Default-568h@2x.png in Resources */,
-				CEB588811726D2C500C6D88A /* Default-568h@2x.png in Resources */,
 				CE28FD6A1726D69E00168087 /* 铁塔2.png in Resources */,
+				CEA18FCD172805ED00700726 /* chat_exclamation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +332,9 @@
 				CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */,
 				CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */,
 				CE663E55171ACBAD00F3EABD /* Restaurant.m in Sources */,
+				CE829F291727ECDA00C85646 /* helpViewController.m in Sources */,
+				CEA18FC81727F51A00700726 /* helpDetailViewController.m in Sources */,
+				CEA18FCB1727FA9C00700726 /* helpListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

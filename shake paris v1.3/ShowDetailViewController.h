@@ -12,7 +12,7 @@
 #import "Restaurant.h"
 #import <iAd/iAd.h>
 
-@interface ShowDetailViewController : UIViewController <ADBannerViewDelegate>
+@interface ShowDetailViewController : UIViewController 
 {
     ADBannerView *bannerView;
 }
@@ -24,6 +24,5 @@
 @property (weak, nonatomic) IBOutlet UITextView *informationTextView;
 @property (weak, nonatomic) IBOutlet UITextView *telephoneTextView;
 @property (weak, nonatomic) IBOutlet UITextView *addressTextView;
-@property (weak, nonatomic) IBOutlet ADBannerView *bannerView;
 -(void)initWithRestaurant:(Restaurant *)restaurant;
 @end

@@ -24,16 +24,26 @@
 }
 -(void)initWithUrl:(NSString *)urlString
 {
+    NSLog(@"---------start initWithUrl: %@", urlString);
+    //NSString *encodedUrl = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     self.url = [NSURL URLWithString:urlString];
+    NSLog(@"---------Fini initWithUrl: %@", self.url);
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.url];
+    NSLog(@"---------LoadWithRequest Loading: %@", self.url);
     [self.neweuropWebView loadRequest:request];
     [self.neweuropWebView setUserInteractionEnabled:YES];
 	// Do any additional setup after loading the view.
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"shouldStartLoadWithRequest Loading: %@", [request URL]);
+    return TRUE;
+    
 }
 
 - (void)didReceiveMemoryWarning

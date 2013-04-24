@@ -16,7 +16,7 @@
 -(UIImage *) mapViewController:(MapViewController *)sender imageForAnnotation:(id <MKAnnotation>)annotation;
 @end
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, ADBannerViewDelegate>
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     ADBannerView *bannerView;
 }
@@ -28,7 +28,6 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (nonatomic , weak) RestauAnnotation *restauAnnotation;
 @property (nonatomic ,strong)  UIActivityIndicatorView *spinner;
-@property (weak, nonatomic) IBOutlet ADBannerView *bannerView;
 - (IBAction)getCurrentLocation:(id)sender;
 - (IBAction)doRefresh:(id)sender;
 @end

@@ -10,6 +10,6 @@
 
 @interface neweuropeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIWebView *neweuropWebView;
-@property (weak , nonatomic) NSURL *url;
+@property (strong , nonatomic) NSURL *url;
 -(void)initWithUrl:(NSString *)urlString;
 @end
