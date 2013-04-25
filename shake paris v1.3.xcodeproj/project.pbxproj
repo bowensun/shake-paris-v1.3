@@ -18,7 +18,6 @@
 		CE80617617046AB800DEEBE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80617517046AB800DEEBE8 /* main.m */; };
 		CE80617A17046AB800DEEBE8 /* shakeparisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */; };
 		CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */; };
-		CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */; };
 		CE80618917046AB800DEEBE8 /* shakeparisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80618817046AB800DEEBE8 /* shakeparisViewController.m */; };
 		CE80619117046EB200DEEBE8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80619017046EB200DEEBE8 /* MapViewController.m */; };
 		CE80619317046F6500DEEBE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE80619217046F6500DEEBE8 /* CoreLocation.framework */; };
@@ -74,7 +73,6 @@
 		CE80617D17046AB800DEEBE8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CE80617F17046AB800DEEBE8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE80618217046AB800DEEBE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		CE80618517046AB800DEEBE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		CE80618717046AB800DEEBE8 /* shakeparisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shakeparisViewController.h; sourceTree = "<group>"; };
 		CE80618817046AB800DEEBE8 /* shakeparisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shakeparisViewController.m; sourceTree = "<group>"; };
 		CE80618F17046EB200DEEBE8 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */,
 				CE80618F17046EB200DEEBE8 /* MapViewController.h */,
 				CE80619017046EB200DEEBE8 /* MapViewController.m */,
-				CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */,
 				CE80618717046AB800DEEBE8 /* shakeparisViewController.h */,
 				CE80618817046AB800DEEBE8 /* shakeparisViewController.m */,
 				CE80619A170473A400DEEBE8 /* RestauAnnotation.h */,
@@ -295,7 +292,6 @@
 			files = (
 				CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */,
 				CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */,
-				CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */,
 				CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */,
 				CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */,
 				CE845A801715DEA60024E88B /* 相关帮助.tif in Resources */,
@@ -357,14 +353,6 @@
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		CE80618417046AB800DEEBE8 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE80618517046AB800DEEBE8 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -396,7 +384,7 @@
 				PROVISIONING_PROFILE = "B44F050B-0567-49A0-9519-F17288B04895";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,7 +409,7 @@
 				PROVISIONING_PROFILE = "B44F050B-0567-49A0-9519-F17288B04895";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -429,6 +417,7 @@
 		CE80618D17046AB800DEEBE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bowen Sun";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
@@ -438,7 +427,9 @@
 				INFOPLIST_FILE = "shake paris v1.3/shake paris v1.3-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -446,6 +437,7 @@
 		CE80618E17046AB800DEEBE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bowen Sun";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
@@ -455,7 +447,9 @@
 				INFOPLIST_FILE = "shake paris v1.3/shake paris v1.3-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
