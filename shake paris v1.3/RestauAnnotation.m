@@ -37,7 +37,6 @@
 
 -(UIImage *)thumbnail
 {
-    NSLog(@"Image Url : %@",self.restaurant.imageURL);
     NSURL *url = [NSURL URLWithString:self.restaurant.imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     

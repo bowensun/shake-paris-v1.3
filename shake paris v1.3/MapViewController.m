@@ -36,22 +36,24 @@
         request.predicate = nil;
         NSError *error = nil ;
         self.restaurants = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:request error:&error]];
-        NSLog(@"%d****************************************", [self.restaurants count]);
+        /*
+         NSLog(@"%d****************************************", [self.restaurants count]);
         for (Restaurant *msgData in self.restaurants) {
             NSLog(@"name:%@  address:%@" ,msgData.name , msgData.address);
         }
+         */
         self.annotations = [self mapAnnotations];
-        NSLog(@"%d in setManagedObjectContext",[self.annotations count]);
+        //NSLog(@"%d in setManagedObjectContext",[self.annotations count]);
         [self updateMapView];
-        NSLog(@"%d in the array",[self.restaurants count]);
-        NSLog(@"loadDataFormDataDocument did!");
+        //NSLog(@"%d in the array",[self.restaurants count]);
+        //NSLog(@"loadDataFormDataDocument did!");
         if (![self.restaurants count]) {
-            NSLog(@"准备重新读取数据");
+            //NSLog(@"准备重新读取数据");
             [self refresh];
         }
     }else{
         self.restaurants = nil;
-        NSLog(@"dont have document");
+        //NSLog(@"dont have document");
     }
 }
 -(void) useDocument
@@ -65,11 +67,11 @@
        [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
            if (success) {
                self.managedObjectContext = document.managedObjectContext;
-                NSLog(@"Creating file success ");
+                //NSLog(@"Creating file success ");
                [self refresh];
            }else
            {
-               NSLog(@"Creating file error");
+               //NSLog(@"Creating file error");
            }
        }];
     }else if (document.documentState == UIDocumentStateClosed){
@@ -77,8 +79,10 @@
         [document openWithCompletionHandler:^(BOOL success) {
             self.managedObjectContext = document.managedObjectContext;
             [self loadDataFromDataDocument:self.managedObjectContext];
+            /*
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"test" message:@"load message" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
             [alert show];
+             */
         }];
     }else{
         //try to use it
@@ -92,7 +96,7 @@
     for (NSDictionary *restaurant in restauArray) {
         [Restaurant restaurantWithFirebaseInfo:restaurant inManagedObjectContext:self.managedObjectContext];
     }
-    NSLog(@"Save to document success");
+    //NSLog(@"Save to document success");
     [self loadDataFromDataDocument:self.managedObjectContext];
 }
 
@@ -140,14 +144,14 @@
     }
     NSString *path = [[NSBundle mainBundle] pathForResource:@"shakeparis-export" ofType:@"json"];
     NSData *jdata = [[NSData alloc] initWithContentsOfFile:path];
-    NSLog(@"long of the jdata = %d",[jdata length]);
+    //NSLog(@"long of the jdata = %d",[jdata length]);
     NSError *e = nil;
     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jdata options:kNilOptions error:&e];
     if (!jsonArray) {
-        NSLog(@"Error parsing JSON: %@",e);
+        //NSLog(@"Error parsing JSON: %@",e);
     }else{
         for (Restaurant *item in jsonArray) {
-            NSLog(@"Item: %@",item);
+            //NSLog(@"Item: %@",item);
             [self.restaurants addObject:item];
         }
     }
@@ -204,28 +208,13 @@
 {
     MKCoordinateRegion theRegion;
     MKCoordinateSpan theSpan;
-    theSpan.latitudeDelta = 0.1;
-    theSpan.longitudeDelta = 0.1;
+    theSpan.latitudeDelta = 0.03;
+    theSpan.longitudeDelta = 0.03;
     theRegion.center = [[locations lastObject] coordinate];
     theRegion.span = theSpan;
     [self.mapView setRegion:theRegion];
 }
-/*
--(void)initRestaurantsArray
-{
-    NSString *str = @"[{\"name\":\"nameTest1\",\"address\":\"addressTest1\",\"longitude\": \"2.2124123\",\"latitude\":\"48.8344123131\"},{\"name\":\"nameTest2\",\"address\":\"addressTest2\",\"longitude\": \"2.5324123\",\"latitude\":\"48.8644123131\"}]";
-    NSError *e = nil;
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&e];
-    if (!jsonArray) {
-        NSLog(@"Error parsing JSON: %@",e);
-    }else{
-        for (NSDictionary *item in jsonArray) {
-            NSLog(@"Item: %@",item);
-        }
-    }
-    self.restaurants = jsonArray;
-}
- */
+
 
 -(NSArray *)mapAnnotations
 {
@@ -262,7 +251,7 @@
     }
     if (self.annotations) {
         [self.mapView addAnnotations: self.annotations];
-        NSLog(@"%d in array annotations",[self.annotations count]);
+        //NSLog(@"%d in array annotations",[self.annotations count]);
     }
 }
 
@@ -340,7 +329,8 @@
  */
 - (void ) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    self.restauAnnotation = view.annotation;    NSLog(@"In mapView didselect %@ %@",self.restauAnnotation.title,self.restauAnnotation.restaurant.information);
+    self.restauAnnotation = view.annotation;
+    //NSLog(@"In mapView didselect %@ %@",self.restauAnnotation.title,self.restauAnnotation.restaurant.information);
 
     if ([view.leftCalloutAccessoryView isKindOfClass:[UIImageView class]]) {
         UIImageView *imageView = (UIImageView *)(view.leftCalloutAccessoryView);
@@ -368,6 +358,7 @@
 - (IBAction)getCurrentLocation:(id)sender {
     [self currentLocation];
 }
+/*
 
 - (IBAction)doRefresh:(id)sender {
     
@@ -375,6 +366,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.spinner];
     [self refresh];
 }
+*/
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

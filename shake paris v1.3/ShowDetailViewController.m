@@ -75,7 +75,6 @@
 {
     if ([segue.identifier isEqualToString:@"showInWebView"]||[segue.identifier isEqualToString:@"showInWebView2"]) {
         [segue.destinationViewController initWithUrl:self.restaurant.xineuropeURL];
-        NSLog(@"IN showdetail %@",self.restaurant.xineuropeURL);
     }
 }
 

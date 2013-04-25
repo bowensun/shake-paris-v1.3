@@ -17,17 +17,13 @@
 @end
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
-{
-    ADBannerView *bannerView;
-}
+
 @property (nonatomic , strong) NSArray *annotations;
 @property (nonatomic , strong) NSMutableArray *restaurants;
 @property (nonatomic , strong) CLLocationManager *locationMangager;
 @property (nonatomic , strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic , weak) id <MapViewControllerDelegate> delegate;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (nonatomic , weak) RestauAnnotation *restauAnnotation;
 @property (nonatomic ,strong)  UIActivityIndicatorView *spinner;
 - (IBAction)getCurrentLocation:(id)sender;
-- (IBAction)doRefresh:(id)sender;
 @end

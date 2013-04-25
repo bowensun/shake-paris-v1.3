@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface helpViewController : UIViewController
-
+- (IBAction)checkVersion:(id)sender;
+@property (weak , nonatomic ) NSString *iTunesLink;
+@property (strong , nonatomic) UIAlertView *baseAlert;
+@property (strong, nonatomic) NSTimer *timer;
 @end

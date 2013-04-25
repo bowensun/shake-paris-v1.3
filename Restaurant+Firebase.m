@@ -43,12 +43,10 @@ static NSArray *restaurants;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     if (!matches || ([matches count] > 1) ) {
         //error
-        NSLog(@"error in class Restaurant function restaurantWithFirebaseInfo");
+        //NSLog(@"error in class Restaurant function restaurantWithFirebaseInfo");
     }else if ( ![matches count] ){
         restaurant = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurant" inManagedObjectContext:context];
-        NSLog(@"1111111111111");
         restaurant.name = [restaurantDictionary objectForKey:@"name"];
-        NSLog(@"%@",[restaurantDictionary objectForKey:@"name"]);
         restaurant.address = [restaurantDictionary objectForKey:@"address"];
         restaurant.type = [restaurantDictionary objectForKey:@"type"];
         restaurant.imageURL = [restaurantDictionary objectForKey:@"imageURL"];
@@ -59,8 +57,7 @@ static NSArray *restaurants;
         restaurant.latitude = [NSNumber numberWithDouble:[[restaurantDictionary objectForKey:@"latitude"] doubleValue]];
         restaurant.longitude = [NSNumber numberWithDouble:[[restaurantDictionary objectForKey:@"longitude"] doubleValue]];
         restaurant.distance = [NSNumber numberWithDouble:999];
-         NSLog(@"%@",[restaurantDictionary objectForKey:@"longitude"]);
-        NSLog(@"99999999999999");
+         //NSLog(@"%@",[restaurantDictionary objectForKey:@"longitude"]);
     }else{
         restaurant = [matches lastObject];
     }

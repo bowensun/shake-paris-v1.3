@@ -115,7 +115,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"%d 显示数据个数--------------",self.items );
+    //NSLog(@"%d 显示数据个数--------------",self.items );
     return self.items;
 }
 
@@ -123,7 +123,7 @@
 {
     static NSString *CellIdentifier = @"restaurant";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     Restaurant *restaurant = (Restaurant *)[self.restaurants objectAtIndex:indexPath.row];
     cell.textLabel.text = restaurant.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"当前距离%0.2f km",restaurant.distance.floatValue/1000];
@@ -170,7 +170,7 @@
 }
 
 - (IBAction)changerMode:(id)sender {
-    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 
     self.spinner.hidesWhenStopped = YES;
     [self.spinner startAnimating];

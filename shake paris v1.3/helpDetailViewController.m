@@ -26,7 +26,7 @@
 -(void)initWithInfoString:(NSString *)string
 {
     self.infoString = string;
-    NSLog(@"%@",self.infoString);
+    //NSLog(@"%@",self.infoString);
 }
 
 - (void)viewDidLoad
