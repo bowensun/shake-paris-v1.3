@@ -51,7 +51,9 @@
     self.addressTextView.text = self.restaurant.address;
     self.businessHours.text = self.restaurant.businessHours;
     self.telephoneTextView.text = self.restaurant.telephone;
-    self.informationTextView.text = self.restaurant.information;
+    NSString *string = self.restaurant.information;
+    NSArray  *array= [string componentsSeparatedByString:@"§"]; 
+    self.metroLabel.text = [array lastObject];
     [NSThread detachNewThreadSelector:@selector(loadRestaurantImage) toTarget:self withObject:nil];
     
 }

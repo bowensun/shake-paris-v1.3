@@ -45,6 +45,10 @@
         [self updateMapView];
         NSLog(@"%d in the array",[self.restaurants count]);
         NSLog(@"loadDataFormDataDocument did!");
+        if (![self.restaurants count]) {
+            NSLog(@"准备重新读取数据");
+            [self refresh];
+        }
     }else{
         self.restaurants = nil;
         NSLog(@"dont have document");

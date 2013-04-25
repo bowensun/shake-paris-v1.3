@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE21216817296E85008C1D98 /* loadimage－1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE21216717296E85008C1D98 /* loadimage－1.tiff */; };
 		CE28FD6A1726D69E00168087 /* 铁塔2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE28FD691726D69E00168087 /* 铁塔2.png */; };
 		CE4C34451711C50D0071A25D /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4C34441711C50D0071A25D /* ShowDetailViewController.m */; };
 		CE663E55171ACBAD00F3EABD /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = CE663E54171ACBAD00F3EABD /* Restaurant.m */; };
@@ -37,7 +38,6 @@
 		CE9BDB7F170C358D0005BB5C /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE9BDB7D170C358D0005BB5C /* Restaurant.xcdatamodeld */; };
 		CE9BDB88170C395E0005BB5C /* Restaurant+Firebase.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */; };
 		CE9BDB90170C5C900005BB5C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB8F170C5C900005BB5C /* CoreData.framework */; };
-		CE9EBA42171460B900E0C044 /* 20080405154401434.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9EBA41171460B900E0C044 /* 20080405154401434.png */; };
 		CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA441714635B00E0C044 /* neweuropeViewController.m */; };
 		CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */; };
 		CEA18FC81727F51A00700726 /* helpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA18FC71727F51A00700726 /* helpDetailViewController.m */; };
@@ -54,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE21216717296E85008C1D98 /* loadimage－1.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "loadimage－1.tiff"; sourceTree = "<group>"; };
 		CE28FD691726D69E00168087 /* 铁塔2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "铁塔2.png"; sourceTree = "<group>"; };
 		CE4C34431711C50D0071A25D /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailViewController.h; sourceTree = "<group>"; };
 		CE4C34441711C50D0071A25D /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailViewController.m; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		CE9BDB86170C395D0005BB5C /* Restaurant+Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Restaurant+Firebase.h"; path = "../Restaurant+Firebase.h"; sourceTree = "<group>"; };
 		CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Restaurant+Firebase.m"; path = "../Restaurant+Firebase.m"; sourceTree = "<group>"; };
 		CE9BDB8F170C5C900005BB5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		CE9EBA41171460B900E0C044 /* 20080405154401434.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20080405154401434.png; sourceTree = "<group>"; };
 		CE9EBA431714635B00E0C044 /* neweuropeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neweuropeViewController.h; sourceTree = "<group>"; };
 		CE9EBA441714635B00E0C044 /* neweuropeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neweuropeViewController.m; sourceTree = "<group>"; };
 		CE9EBA461715B00300E0C044 /* restaurantTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restaurantTableViewController.h; sourceTree = "<group>"; };
@@ -213,6 +213,7 @@
 		CE80617017046AB800DEEBE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE21216717296E85008C1D98 /* loadimage－1.tiff */,
 				CEA18FCC172805ED00700726 /* chat_exclamation.png */,
 				CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */,
 				CEB5887D1726D0A600C6D88A /* Default@2x.png */,
@@ -226,7 +227,6 @@
 				CE845A7B1715DEA60024E88B /* 地图模式.tif */,
 				CE845A7C1715DEA60024E88B /* 列表模式.tif */,
 				CE845A7D1715DEA60024E88B /* 相关帮助.tif */,
-				CE9EBA41171460B900E0C044 /* 20080405154401434.png */,
 				CE80617817046AB800DEEBE8 /* shakeparisAppDelegate.h */,
 				CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */,
 				CE80617117046AB800DEEBE8 /* shake paris v1.3-Info.plist */,
@@ -296,7 +296,6 @@
 				CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */,
 				CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */,
 				CE80618617046AB800DEEBE8 /* MainStoryboard_iPad.storyboard in Resources */,
-				CE9EBA42171460B900E0C044 /* 20080405154401434.png in Resources */,
 				CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */,
 				CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */,
 				CE845A801715DEA60024E88B /* 相关帮助.tif in Resources */,
@@ -311,6 +310,7 @@
 				CEB588801726D0AD00C6D88A /* Default-568h@2x.png in Resources */,
 				CE28FD6A1726D69E00168087 /* 铁塔2.png in Resources */,
 				CEA18FCD172805ED00700726 /* chat_exclamation.png in Resources */,
+				CE21216817296E85008C1D98 /* loadimage－1.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
