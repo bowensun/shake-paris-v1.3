@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "Restaurant.h"
+#import "LocalRestaurant.h"
 
 @interface RestauAnnotation : NSObject <MKAnnotation>
 
-+(RestauAnnotation *) annotationForRestaurant:(Restaurant *)photo;
++(RestauAnnotation *) annotationForRestaurant:(LocalRestaurant *)restaurant;
 -(UIImage *)thumbnail;
-@property (nonatomic,strong) Restaurant *restaurant;
+@property (nonatomic,strong) LocalRestaurant *restaurant;
 @end

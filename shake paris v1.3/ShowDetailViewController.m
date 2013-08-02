@@ -23,7 +23,7 @@
     }
     return self;
 }
--(void)initWithRestaurant:(Restaurant *)restaurant
+-(void)initWithRestaurant:(LocalRestaurant *)restaurant
 {
     self.restaurant  = restaurant;
 }
@@ -42,8 +42,8 @@
         self.restaurantImage.image = image;
     else
         self.restaurantImage.image = nil;
-
 }
+
 -(void) loadRestaurantData
 {
     self.navigationItem.title= self.restaurant.name;
@@ -54,9 +54,22 @@
     NSString *string = self.restaurant.information;
     NSArray  *array= [string componentsSeparatedByString:@"§"]; 
     self.metroLabel.text = [array lastObject];
+    self.metroLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.metroLabel addGestureRecognizer:recognizer];
     [NSThread detachNewThreadSelector:@selector(loadRestaurantImage) toTarget:self withObject:nil];
     
 }
+-(void)tapAction
+{
+    /*
+     NSInteger tag = gesture.view.tag;
+     NSString *string = [self.types objectAtIndex:tag];
+     NSLog(@"%@",string);
+     */
+    NSLog(@"TEST");
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -76,6 +89,7 @@
     if ([segue.identifier isEqualToString:@"showInWebView"]||[segue.identifier isEqualToString:@"showInWebView2"]) {
         [segue.destinationViewController initWithUrl:self.restaurant.xineuropeURL];
     }
+  
 }
 
 @end

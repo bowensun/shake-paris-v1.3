@@ -10,7 +10,7 @@
 
 @interface helpViewController : UIViewController
 - (IBAction)checkVersion:(id)sender;
-@property (weak , nonatomic ) NSString *iTunesLink;
+- (IBAction)customersReviews:(id)sender;
 @property (strong , nonatomic) UIAlertView *baseAlert;
 @property (strong, nonatomic) NSTimer *timer;
 @end

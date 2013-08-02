@@ -7,12 +7,14 @@
 //
 
 #import "shakeparisAppDelegate.h"
+#import "LocalRestaurant.h"
 
 @implementation shakeparisAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [LocalRestaurant loadLocalData];
     return YES;
 }
 							

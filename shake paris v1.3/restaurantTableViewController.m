@@ -15,9 +15,17 @@
 
 @implementation restaurantTableViewController
 
+
 //
 
 
+
+//筛选条件后的餐馆初始化
+-(void) initWithRestaurantsSelected:(NSMutableArray *)restaurantsSelected WithType:(NSString *)type
+{
+    self.restaurants = [[NSArray alloc] initWithArray:restaurantsSelected];
+    self.flag = type;
+}
 //数组排序
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -45,26 +53,44 @@
     }
  
 }
-
+-(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    self.restaurants = [LocalRestaurant initDistance:newLocation withArray:self.restaurants];
+    NSSortDescriptor *sortByDistance = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    self.restaurants = [self.restaurants sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByDistance]];
+    [self.tableView reloadData];
+}
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    self.restaurants = [LocalRestaurant initDistance:[locations lastObject] withArray:self.restaurants];
+    NSSortDescriptor *sortByDistance = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    self.restaurants = [self.restaurants sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByDistance]];
+    [self.tableView reloadData];
+}
 //初始化restaurants数组中distance的值，并进行排序
 - (void)initDistances
 {
-    [self.refreshControl endRefreshing];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+
+    if (self.sdkVersion.doubleValue >= 6)
+    {
+        [self.refreshControl endRefreshing];
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    }
+    
     [self.tableView reloadData];
+
     if (([self.restaurants count]-self.items)<5) {
         self.items = [self.restaurants count];
     }else
         self.items += 5;
     
     CLLocation *userLocation = [self.localManager location];
-    for (Restaurant *restaurant in self.restaurants) {
-        [restaurant initDistance:userLocation];
-    }
+    self.restaurants = [LocalRestaurant initDistance:userLocation withArray:self.restaurants];
     NSSortDescriptor *sortByDistance = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
     self.restaurants = [self.restaurants sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByDistance]];
     self.navigationItem.rightBarButtonItem = self.buttonChangerMode;
     [self.spinner stopAnimating];
+
 }
 //下拉刷新控制器初始化添加
 -(void)addRefreshViewController
@@ -87,22 +113,37 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    if (self.flag) {
+        NSLog(@"%@",self.flag);
+        self.navigationItem.title = self.flag;
+        for (LocalRestaurant *restau in self.restaurants) {
+            NSLog(@"在表里1%@",restau.name);
+        }
+    }else{
+        self.restaurants = [LocalRestaurant getRestaurants];
+    }
+    self.sdkVersion = [[NSNumber alloc] initWithDouble: [[[UIDevice currentDevice] systemVersion] doubleValue]];
     self.viewMode = @"byDistance";
-    self.restaurants = [Restaurant getRestaurants];
+
     self.items = [self.restaurants count] >= 6? 6: [self.restaurants count] ;
+
+    if (self.sdkVersion.doubleValue >= 6) {
+        [self addRefreshViewController];
+    }
     [self initGPS];
     [self initDistances];
-    [self addRefreshViewController];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    for (LocalRestaurant *restau in self.restaurants) {
+        NSLog(@"在表里2%@",restau.name);
+    }
+    [super viewDidLoad];
+    NSLog(@"加载完毕");
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+    [super viewWillAppear:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -122,14 +163,33 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"restaurant";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    Restaurant *restaurant = (Restaurant *)[self.restaurants objectAtIndex:indexPath.row];
-    cell.textLabel.text = restaurant.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"当前距离%0.2f km",restaurant.distance.floatValue/1000];
-    // Configure the cell...
+    if (self.sdkVersion.doubleValue >= 6)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        LocalRestaurant *restaurant = (LocalRestaurant *)[self.restaurants objectAtIndex:indexPath.row];
+        cell.textLabel.text = restaurant.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"当前距离%0.2f km",restaurant.distance.floatValue/1000];
+        return cell;
+        // Configure the cell...
+    }else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            LocalRestaurant *restaurant = (LocalRestaurant *)[self.restaurants objectAtIndex:indexPath.row];
+            cell.textLabel.text = restaurant.name;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"当前距离%0.2f km",restaurant.distance.floatValue/1000];
+            // **get** your stuff back using their tags
+        }
+        return cell;
+    }
     
-    return cell;
 }
 
 
@@ -145,7 +205,7 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    self.restaurant = (Restaurant *)[self.restaurants objectAtIndex:indexPath.row];
+    self.restaurant = (LocalRestaurant *)[self.restaurants objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"showRestaurantByTVC" sender:self];
 
 }
@@ -160,8 +220,12 @@
 -(void)initTotal
 {
     self.items = [self.restaurants count];
-    [self.refreshControl endRefreshing];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    if (self.sdkVersion.doubleValue >= 6)
+    {
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+        [self.refreshControl endRefreshing];
+    }
+
     [self.tableView reloadData];
     NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"information" ascending:YES];
     self.restaurants = [self.restaurants sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByName]];
@@ -179,14 +243,32 @@
     if ([self.viewMode isEqualToString: @"total"]) {
         self.viewMode =@"byDistance";
         self.buttonChangerMode.title = @"点击浏览全部";
-        self.navigationItem.title = @"最近距离模式";
+        if (!self.flag) {
+            self.navigationItem.title = @"最近距离模式";
+        }
     }else{
         self.viewMode =@"total";
         self.buttonChangerMode.title = @"按距离浏览";
+        if (!self.flag) {
         self.navigationItem.title = @"全部浏览模式";
+        }
     }
-    [self RefreshViewControlEventValueChanged];
+    if (self.sdkVersion.doubleValue >= 6)
+    {
+        [self RefreshViewControlEventValueChanged];
+    }
+    
     [self.tableView reloadData];
+    if (self.sdkVersion.doubleValue < 6)
+    {
+        if ([self.viewMode isEqualToString:[NSString stringWithFormat: @"total"]]) {
+            [self performSelector:@selector(initTotal) withObject:nil afterDelay:1.0f];
+        }
+        else
+        {
+            [self performSelector:@selector(initDistances) withObject:nil afterDelay:1.0f];
+        }
+    }    
     //[spinner stopAnimating];
     //self.navigationItem.rightBarButtonItem = sender;
 

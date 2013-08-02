@@ -17,12 +17,12 @@
     ADBannerView *bannerView;
 }
 
-@property (nonatomic, weak) Restaurant *restaurant;
+@property (nonatomic, weak) LocalRestaurant *restaurant;
 @property (weak, nonatomic) IBOutlet UILabel *typeLable;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
 @property (weak, nonatomic) IBOutlet UILabel *businessHours;
 @property (weak, nonatomic) IBOutlet UITextView *telephoneTextView;
 @property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 @property (weak, nonatomic) IBOutlet UILabel *metroLabel;
--(void)initWithRestaurant:(Restaurant *)restaurant;
+-(void)initWithRestaurant:(LocalRestaurant *)restaurant;
 @end

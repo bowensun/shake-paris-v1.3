@@ -13,15 +13,15 @@
 #import <iAd/iAd.h>
 
 @interface restaurantTableViewController : UITableViewController<CLLocationManagerDelegate, MKMapViewDelegate>
-{
-    ADBannerView *bannerView;
-}
 @property (nonatomic ,strong) NSString *viewMode;
 @property (nonatomic, strong) NSArray *restaurants;
-@property (nonatomic, weak) Restaurant *restaurant;
+@property (nonatomic, strong) LocalRestaurant *restaurant;
 @property (nonatomic, strong) CLLocationManager *localManager;
 @property (nonatomic,assign) NSInteger items;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonChangerMode;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
+@property (nonatomic,strong) NSNumber *sdkVersion;
+@property (nonatomic ,strong) NSString *flag;
+-(void) initWithRestaurantsSelected:(NSMutableArray *)restaurantsSelected WithType:(NSString *)type;
 - (IBAction)changerMode:(id)sender;
 @end

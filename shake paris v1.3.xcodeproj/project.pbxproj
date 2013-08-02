@@ -25,9 +25,6 @@
 		CE80619C170473A400DEEBE8 /* RestauAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80619B170473A400DEEBE8 /* RestauAnnotation.m */; };
 		CE829F291727ECDA00C85646 /* helpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE829F281727ECDA00C85646 /* helpViewController.m */; };
 		CE82CE07171B208700CB26A8 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE82CE06171B208700CB26A8 /* iAd.framework */; };
-		CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7B1715DEA60024E88B /* 地图模式.tif */; };
-		CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7C1715DEA60024E88B /* 列表模式.tif */; };
-		CE845A801715DEA60024E88B /* 相关帮助.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE845A7D1715DEA60024E88B /* 相关帮助.tif */; };
 		CE845A821716118A0024E88B /* shakeparis-export.json in Resources */ = {isa = PBXBuildFile; fileRef = CE845A811716118A0024E88B /* shakeparis-export.json */; };
 		CE9A7380171EF5350042C5D1 /* restauData.xml in Resources */ = {isa = PBXBuildFile; fileRef = CE9A737F171EF5350042C5D1 /* restauData.xml */; };
 		CE9BDB761705CB650005BB5C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB751705CB650005BB5C /* Firebase.framework */; };
@@ -35,8 +32,18 @@
 		CE9BDB7A1705CBA40005BB5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB791705CBA40005BB5C /* CFNetwork.framework */; };
 		CE9BDB7C1705CBB50005BB5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB7B1705CBB50005BB5C /* Security.framework */; };
 		CE9BDB7F170C358D0005BB5C /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE9BDB7D170C358D0005BB5C /* Restaurant.xcdatamodeld */; };
-		CE9BDB88170C395E0005BB5C /* Restaurant+Firebase.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */; };
 		CE9BDB90170C5C900005BB5C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9BDB8F170C5C900005BB5C /* CoreData.framework */; };
+		CE9C8CBD1776F11100425C8F /* LocalRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C8CBC1776F11100425C8F /* LocalRestaurant.m */; };
+		CE9C8CC11777A78300425C8F /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CC01777A78200425C8F /* cloud@2x.png */; };
+		CE9C8CC31777A82F00425C8F /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CC21777A82E00425C8F /* cloud.png */; };
+		CE9C8CC61777AF4500425C8F /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CC41777AF4500425C8F /* list.png */; };
+		CE9C8CC71777AF4500425C8F /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CC51777AF4500425C8F /* list@2x.png */; };
+		CE9C8CCA1777AF4F00425C8F /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CC81777AF4F00425C8F /* map.png */; };
+		CE9C8CCB1777AF4F00425C8F /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CC91777AF4F00425C8F /* map@2x.png */; };
+		CE9C8CD21777AF7100425C8F /* shake.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CD01777AF7100425C8F /* shake.png */; };
+		CE9C8CD31777AF7100425C8F /* shake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CD11777AF7100425C8F /* shake@2x.png */; };
+		CE9C8CD61777B08700425C8F /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CD41777B08700425C8F /* help.png */; };
+		CE9C8CD71777B08700425C8F /* help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9C8CD51777B08700425C8F /* help@2x.png */; };
 		CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA441714635B00E0C044 /* neweuropeViewController.m */; };
 		CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EBA471715B00300E0C044 /* restaurantTableViewController.m */; };
 		CEA18FC81727F51A00700726 /* helpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA18FC71727F51A00700726 /* helpDetailViewController.m */; };
@@ -44,12 +51,15 @@
 		CEA18FCD172805ED00700726 /* chat_exclamation.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA18FCC172805ED00700726 /* chat_exclamation.png */; };
 		CEB5886417204F5C00C6D88A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB5886317204F5C00C6D88A /* AudioToolbox.framework */; };
 		CEB588661726A36200C6D88A /* musiqueRestau.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEB588651726A36200C6D88A /* musiqueRestau.wav */; };
-		CEB588681726C16400C6D88A /* 摇一摇图标.tif in Resources */ = {isa = PBXBuildFile; fileRef = CEB588671726C16400C6D88A /* 摇一摇图标.tif */; };
 		CEB588781726CCE200C6D88A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB588771726CCE200C6D88A /* Icon.png */; };
 		CEB5887A1726CCF200C6D88A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB588791726CCF200C6D88A /* Icon@2x.png */; };
 		CEB5887C1726D09D00C6D88A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB5887B1726D09D00C6D88A /* Default.png */; };
 		CEB5887E1726D0A600C6D88A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB5887D1726D0A600C6D88A /* Default@2x.png */; };
 		CEB588801726D0AD00C6D88A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */; };
+		CEBBF42F1741082F00A25AA0 /* SphereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF42E1741082F00A25AA0 /* SphereViewController.m */; };
+		CEBBF43017410B7C00A25AA0 /* PFGoldenSectionSpiral.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF426174107F700A25AA0 /* PFGoldenSectionSpiral.m */; };
+		CEBBF43117410B7C00A25AA0 /* PFSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF42C174107F700A25AA0 /* PFSphereView.m */; };
+		CEBBF4391741454900A25AA0 /* Restaurant+Firebase.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF4381741454900A25AA0 /* Restaurant+Firebase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,9 +94,6 @@
 		CE829F271727ECDA00C85646 /* helpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpViewController.h; sourceTree = "<group>"; };
 		CE829F281727ECDA00C85646 /* helpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpViewController.m; sourceTree = "<group>"; };
 		CE82CE06171B208700CB26A8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		CE845A7B1715DEA60024E88B /* 地图模式.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "地图模式.tif"; sourceTree = "<group>"; };
-		CE845A7C1715DEA60024E88B /* 列表模式.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "列表模式.tif"; sourceTree = "<group>"; };
-		CE845A7D1715DEA60024E88B /* 相关帮助.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "相关帮助.tif"; sourceTree = "<group>"; };
 		CE845A811716118A0024E88B /* shakeparis-export.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shakeparis-export.json"; sourceTree = "<group>"; };
 		CE9A737F171EF5350042C5D1 /* restauData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = restauData.xml; sourceTree = "<group>"; };
 		CE9BDB751705CB650005BB5C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../Firebase.framework; sourceTree = "<group>"; };
@@ -94,9 +101,19 @@
 		CE9BDB791705CBA40005BB5C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CE9BDB7B1705CBB50005BB5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE9BDB7E170C358D0005BB5C /* Restaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restaurant.xcdatamodel; sourceTree = "<group>"; };
-		CE9BDB86170C395D0005BB5C /* Restaurant+Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Restaurant+Firebase.h"; path = "../Restaurant+Firebase.h"; sourceTree = "<group>"; };
-		CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Restaurant+Firebase.m"; path = "../Restaurant+Firebase.m"; sourceTree = "<group>"; };
 		CE9BDB8F170C5C900005BB5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE9C8CBB1776F11100425C8F /* LocalRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalRestaurant.h; sourceTree = "<group>"; };
+		CE9C8CBC1776F11100425C8F /* LocalRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalRestaurant.m; sourceTree = "<group>"; };
+		CE9C8CC01777A78200425C8F /* cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@2x.png"; sourceTree = "<group>"; };
+		CE9C8CC21777A82E00425C8F /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		CE9C8CC41777AF4500425C8F /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		CE9C8CC51777AF4500425C8F /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		CE9C8CC81777AF4F00425C8F /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		CE9C8CC91777AF4F00425C8F /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
+		CE9C8CD01777AF7100425C8F /* shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake.png; sourceTree = "<group>"; };
+		CE9C8CD11777AF7100425C8F /* shake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shake@2x.png"; sourceTree = "<group>"; };
+		CE9C8CD41777B08700425C8F /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		CE9C8CD51777B08700425C8F /* help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help@2x.png"; sourceTree = "<group>"; };
 		CE9EBA431714635B00E0C044 /* neweuropeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neweuropeViewController.h; sourceTree = "<group>"; };
 		CE9EBA441714635B00E0C044 /* neweuropeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = neweuropeViewController.m; sourceTree = "<group>"; };
 		CE9EBA461715B00300E0C044 /* restaurantTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restaurantTableViewController.h; sourceTree = "<group>"; };
@@ -108,12 +125,24 @@
 		CEA18FCC172805ED00700726 /* chat_exclamation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_exclamation.png; sourceTree = "<group>"; };
 		CEB5886317204F5C00C6D88A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CEB588651726A36200C6D88A /* musiqueRestau.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = musiqueRestau.wav; sourceTree = "<group>"; };
-		CEB588671726C16400C6D88A /* 摇一摇图标.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "摇一摇图标.tif"; sourceTree = "<group>"; };
 		CEB588771726CCE200C6D88A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		CEB588791726CCF200C6D88A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		CEB5887B1726D09D00C6D88A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		CEB5887D1726D0A600C6D88A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		CEBBF425174107F700A25AA0 /* PFGoldenSectionSpiral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFGoldenSectionSpiral.h; sourceTree = "<group>"; };
+		CEBBF426174107F700A25AA0 /* PFGoldenSectionSpiral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFGoldenSectionSpiral.m; sourceTree = "<group>"; };
+		CEBBF42B174107F700A25AA0 /* PFSphereView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFSphereView.h; sourceTree = "<group>"; };
+		CEBBF42C174107F700A25AA0 /* PFSphereView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFSphereView.m; sourceTree = "<group>"; };
+		CEBBF42D1741082F00A25AA0 /* SphereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereViewController.h; sourceTree = "<group>"; };
+		CEBBF42E1741082F00A25AA0 /* SphereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SphereViewController.m; sourceTree = "<group>"; };
+		CEBBF43217410CF900A25AA0 /* PFAxisDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAxisDirection.h; sourceTree = "<group>"; };
+		CEBBF43317410CF900A25AA0 /* PFMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMatrix.h; sourceTree = "<group>"; };
+		CEBBF43417410CF900A25AA0 /* PFMatrixTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMatrixTransform.h; sourceTree = "<group>"; };
+		CEBBF43517410CF900A25AA0 /* PFPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFPoint.h; sourceTree = "<group>"; };
+		CEBBF43617410CFA00A25AA0 /* PFRadian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFRadian.h; sourceTree = "<group>"; };
+		CEBBF4371741454900A25AA0 /* Restaurant+Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Restaurant+Firebase.h"; sourceTree = "<group>"; };
+		CEBBF4381741454900A25AA0 /* Restaurant+Firebase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Restaurant+Firebase.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +171,6 @@
 		CE80615A17046AB800DEEBE8 = {
 			isa = PBXGroup;
 			children = (
-				CEB5886317204F5C00C6D88A /* AudioToolbox.framework */,
 				CE80616F17046AB800DEEBE8 /* shake paris v1.3 */,
 				CE80616817046AB800DEEBE8 /* Frameworks */,
 				CE80616617046AB800DEEBE8 /* Products */,
@@ -160,6 +188,7 @@
 		CE80616817046AB800DEEBE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEB5886317204F5C00C6D88A /* AudioToolbox.framework */,
 				CE82CE06171B208700CB26A8 /* iAd.framework */,
 				CE9BDB8F170C5C900005BB5C /* CoreData.framework */,
 				CE9BDB7B1705CBB50005BB5C /* Security.framework */,
@@ -178,11 +207,12 @@
 		CE80616F17046AB800DEEBE8 /* shake paris v1.3 */ = {
 			isa = PBXGroup;
 			children = (
+				CE9C8CBA1776F0C600425C8F /* LocalRestaurant */,
 				CE663E53171ACBAD00F3EABD /* Restaurant.h */,
 				CE663E54171ACBAD00F3EABD /* Restaurant.m */,
-				CE9BDB86170C395D0005BB5C /* Restaurant+Firebase.h */,
-				CE9BDB87170C395E0005BB5C /* Restaurant+Firebase.m */,
 				CE80618117046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard */,
+				CEBBF4371741454900A25AA0 /* Restaurant+Firebase.h */,
+				CEBBF4381741454900A25AA0 /* Restaurant+Firebase.m */,
 				CEA18FC91727FA9C00700726 /* helpListViewController.h */,
 				CEA18FCA1727FA9C00700726 /* helpListViewController.m */,
 				CE829F271727ECDA00C85646 /* helpViewController.h */,
@@ -202,6 +232,7 @@
 				CE4C34441711C50D0071A25D /* ShowDetailViewController.m */,
 				CE9EBA431714635B00E0C044 /* neweuropeViewController.h */,
 				CE9EBA441714635B00E0C044 /* neweuropeViewController.m */,
+				CEBBF4231741074100A25AA0 /* Sphere */,
 				CE80617017046AB800DEEBE8 /* Supporting Files */,
 			);
 			path = "shake paris v1.3";
@@ -210,6 +241,16 @@
 		CE80617017046AB800DEEBE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE9C8CD41777B08700425C8F /* help.png */,
+				CE9C8CD51777B08700425C8F /* help@2x.png */,
+				CE9C8CD01777AF7100425C8F /* shake.png */,
+				CE9C8CD11777AF7100425C8F /* shake@2x.png */,
+				CE9C8CC81777AF4F00425C8F /* map.png */,
+				CE9C8CC91777AF4F00425C8F /* map@2x.png */,
+				CE9C8CC41777AF4500425C8F /* list.png */,
+				CE9C8CC51777AF4500425C8F /* list@2x.png */,
+				CE9C8CC21777A82E00425C8F /* cloud.png */,
+				CE9C8CC01777A78200425C8F /* cloud@2x.png */,
 				CE21216717296E85008C1D98 /* loadimage－1.tiff */,
 				CEA18FCC172805ED00700726 /* chat_exclamation.png */,
 				CEB5887F1726D0AD00C6D88A /* Default-568h@2x.png */,
@@ -218,12 +259,8 @@
 				CEB588791726CCF200C6D88A /* Icon@2x.png */,
 				CEB588771726CCE200C6D88A /* Icon.png */,
 				CE28FD691726D69E00168087 /* 铁塔2.png */,
-				CEB588671726C16400C6D88A /* 摇一摇图标.tif */,
 				CEB588651726A36200C6D88A /* musiqueRestau.wav */,
 				CE845A811716118A0024E88B /* shakeparis-export.json */,
-				CE845A7B1715DEA60024E88B /* 地图模式.tif */,
-				CE845A7C1715DEA60024E88B /* 列表模式.tif */,
-				CE845A7D1715DEA60024E88B /* 相关帮助.tif */,
 				CE80617817046AB800DEEBE8 /* shakeparisAppDelegate.h */,
 				CE80617917046AB800DEEBE8 /* shakeparisAppDelegate.m */,
 				CE80617117046AB800DEEBE8 /* shake paris v1.3-Info.plist */,
@@ -236,6 +273,33 @@
 				CE9A737F171EF5350042C5D1 /* restauData.xml */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE9C8CBA1776F0C600425C8F /* LocalRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C8CBB1776F11100425C8F /* LocalRestaurant.h */,
+				CE9C8CBC1776F11100425C8F /* LocalRestaurant.m */,
+			);
+			name = LocalRestaurant;
+			sourceTree = "<group>";
+		};
+		CEBBF4231741074100A25AA0 /* Sphere */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBF43217410CF900A25AA0 /* PFAxisDirection.h */,
+				CEBBF43317410CF900A25AA0 /* PFMatrix.h */,
+				CEBBF43417410CF900A25AA0 /* PFMatrixTransform.h */,
+				CEBBF43517410CF900A25AA0 /* PFPoint.h */,
+				CEBBF43617410CFA00A25AA0 /* PFRadian.h */,
+				CEBBF425174107F700A25AA0 /* PFGoldenSectionSpiral.h */,
+				CEBBF426174107F700A25AA0 /* PFGoldenSectionSpiral.m */,
+				CEBBF42B174107F700A25AA0 /* PFSphereView.h */,
+				CEBBF42C174107F700A25AA0 /* PFSphereView.m */,
+				CEBBF42D1741082F00A25AA0 /* SphereViewController.h */,
+				CEBBF42E1741082F00A25AA0 /* SphereViewController.m */,
+			);
+			name = Sphere;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,13 +356,9 @@
 			files = (
 				CE80617417046AB800DEEBE8 /* InfoPlist.strings in Resources */,
 				CE80618317046AB800DEEBE8 /* MainStoryboard_iPhone.storyboard in Resources */,
-				CE845A7E1715DEA60024E88B /* 地图模式.tif in Resources */,
-				CE845A7F1715DEA60024E88B /* 列表模式.tif in Resources */,
-				CE845A801715DEA60024E88B /* 相关帮助.tif in Resources */,
 				CE845A821716118A0024E88B /* shakeparis-export.json in Resources */,
 				CE9A7380171EF5350042C5D1 /* restauData.xml in Resources */,
 				CEB588661726A36200C6D88A /* musiqueRestau.wav in Resources */,
-				CEB588681726C16400C6D88A /* 摇一摇图标.tif in Resources */,
 				CEB588781726CCE200C6D88A /* Icon.png in Resources */,
 				CEB5887A1726CCF200C6D88A /* Icon@2x.png in Resources */,
 				CEB5887C1726D09D00C6D88A /* Default.png in Resources */,
@@ -307,6 +367,16 @@
 				CE28FD6A1726D69E00168087 /* 铁塔2.png in Resources */,
 				CEA18FCD172805ED00700726 /* chat_exclamation.png in Resources */,
 				CE21216817296E85008C1D98 /* loadimage－1.tiff in Resources */,
+				CE9C8CC11777A78300425C8F /* cloud@2x.png in Resources */,
+				CE9C8CC31777A82F00425C8F /* cloud.png in Resources */,
+				CE9C8CC61777AF4500425C8F /* list.png in Resources */,
+				CE9C8CC71777AF4500425C8F /* list@2x.png in Resources */,
+				CE9C8CCA1777AF4F00425C8F /* map.png in Resources */,
+				CE9C8CCB1777AF4F00425C8F /* map@2x.png in Resources */,
+				CE9C8CD21777AF7100425C8F /* shake.png in Resources */,
+				CE9C8CD31777AF7100425C8F /* shake@2x.png in Resources */,
+				CE9C8CD61777B08700425C8F /* help.png in Resources */,
+				CE9C8CD71777B08700425C8F /* help@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,13 +387,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBBF43017410B7C00A25AA0 /* PFGoldenSectionSpiral.m in Sources */,
+				CEBBF43117410B7C00A25AA0 /* PFSphereView.m in Sources */,
 				CE80617617046AB800DEEBE8 /* main.m in Sources */,
 				CE80617A17046AB800DEEBE8 /* shakeparisAppDelegate.m in Sources */,
 				CE80618917046AB800DEEBE8 /* shakeparisViewController.m in Sources */,
 				CE80619117046EB200DEEBE8 /* MapViewController.m in Sources */,
 				CE80619C170473A400DEEBE8 /* RestauAnnotation.m in Sources */,
 				CE9BDB7F170C358D0005BB5C /* Restaurant.xcdatamodeld in Sources */,
-				CE9BDB88170C395E0005BB5C /* Restaurant+Firebase.m in Sources */,
 				CE4C34451711C50D0071A25D /* ShowDetailViewController.m in Sources */,
 				CE9EBA451714635B00E0C044 /* neweuropeViewController.m in Sources */,
 				CE9EBA481715B00300E0C044 /* restaurantTableViewController.m in Sources */,
@@ -331,6 +402,9 @@
 				CE829F291727ECDA00C85646 /* helpViewController.m in Sources */,
 				CEA18FC81727F51A00700726 /* helpDetailViewController.m in Sources */,
 				CEA18FCB1727FA9C00700726 /* helpListViewController.m in Sources */,
+				CEBBF42F1741082F00A25AA0 /* SphereViewController.m in Sources */,
+				CEBBF4391741454900A25AA0 /* Restaurant+Firebase.m in Sources */,
+				CE9C8CBD1776F11100425C8F /* LocalRestaurant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +491,7 @@
 		CE80618D17046AB800DEEBE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bowen Sun";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
@@ -425,6 +499,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shake paris v1.3/shake paris v1.3-Prefix.pch";
 				INFOPLIST_FILE = "shake paris v1.3/shake paris v1.3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -437,7 +513,7 @@
 		CE80618E17046AB800DEEBE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Bowen Sun";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
@@ -445,6 +521,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "shake paris v1.3/shake paris v1.3-Prefix.pch";
 				INFOPLIST_FILE = "shake paris v1.3/shake paris v1.3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

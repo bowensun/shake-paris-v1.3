@@ -36,40 +36,64 @@
 - (IBAction)checkVersion:(id)sender {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(dialogDismiss) userInfo:nil repeats:YES];
     [self dialogShow];
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *app_Version = [infoDictionary objectForKey:@"UserVersion"];
-    NSString* url = @"https://bowenstudio.firebaseio.com/";
-    Firebase* dataRef = [[Firebase alloc] initWithUrl:url];
-    [dataRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSString *versionFirebase = [[NSString alloc] initWithFormat:@"%@",snapshot.value[@"version"]];
-        self.iTunesLink = snapshot.value[@"itunesURL"];
-        if (versionFirebase) {
-            if ([versionFirebase isEqualToString:app_Version]) {
-                [self dialogDismiss];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"版本检测" message:@"当前版本为最新版本" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                [alert show];
-            }
-            else
+    [self onCheckVersion];
+}
+
+-(void)onCheckVersion
+{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *appVersion = [infoDic objectForKey:@"CFBundleVersion"];
+    
+    NSString *URL =@"http://itunes.apple.com/lookup?id=641363963";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:URL]];
+    [request setHTTPMethod:@"POST"];
+    NSHTTPURLResponse *urlResponse = nil;
+    NSError *error = nil;
+    NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (jsonData) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        NSArray *infoArray = [dic objectForKey:@"results"];
+        if ([infoArray count]) {
+            NSDictionary *releaseInfo = [infoArray objectAtIndex:0];
+            NSString *lastVersion = [releaseInfo objectForKey:@"version"];
+            
+            NSLog(@"current version :%@\n last version %@",appVersion,lastVersion);
+            if (lastVersion) {
+                if (![lastVersion isEqualToString:appVersion]) {
+                    [self dialogDismiss];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发现新的版本!!" message: @"A new version of app is available to download" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Download", nil];
+                    [alert show];
+                }else{
+                    [self dialogDismiss];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"版本检测" message:@"当前版本为最新版本" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+            }else
             {
                 [self dialogDismiss];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发现新的版本!!" message: @"A new version of app is available to download" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Download", nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message: @"获取数据出错,请检查您的网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil, nil];
                 [alert show];
             }
+            
         }
-        else
-        {
-            [self dialogDismiss];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message: @"获取数据出错" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil, nil];
-            [alert show];
-        }
+    }
+    else
+    {
+        [self dialogDismiss];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message: @"获取数据出错,请检查您的网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil, nil];
+        [alert show];
+    }
 
-    }];
+}
+- (IBAction)customersReviews:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/chi-zai-ba-li/id641363963?ls=1&mt=8"]];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.iTunesLink]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/chi-zai-ba-li/id641363963?ls=1&mt=8"]];
     }
 }
 

@@ -13,5 +13,5 @@
 @interface shakeparisViewController : UIViewController
 
 @property (strong, nonatomic) NSArray *restaurants;
-@property (weak , nonatomic) Restaurant *restaurant;
+@property (weak , nonatomic) LocalRestaurant *restaurant;
 @end

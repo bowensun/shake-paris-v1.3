@@ -10,12 +10,20 @@
 @implementation RestauAnnotation 
 @synthesize restaurant =_restaurant;
 
++(RestauAnnotation *) annotationForRestaurant:(LocalRestaurant *)restaurant
+{
+    RestauAnnotation *annotations = [[RestauAnnotation alloc] init];
+    annotations.restaurant = restaurant;
+    return annotations;
+}
+/*
 +(RestauAnnotation *) annotationForRestaurant:(Restaurant *)restaurant
 {
     RestauAnnotation *annotations = [[RestauAnnotation alloc] init];
     annotations.restaurant = restaurant;
     return annotations;
 }
+ */
 
 -(NSString *)title
 {

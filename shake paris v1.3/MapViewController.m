@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import <Firebase/Firebase.h>
 #import <CoreData/CoreData.h>
 #import "ShowDetailViewController.h"
 
@@ -28,34 +27,54 @@
     _managedObjectContext = managedObjectContext;
 }
 
+/*
 -(void)loadDataFromDataDocument:(NSManagedObjectContext *)managedObjectContext
 {
     if (managedObjectContext) {
+        NSLog(@"准备从文件中读取数据");
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Restaurant"];
-        //request.sortDescriptors  = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+        request.sortDescriptors  = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
         request.predicate = nil;
         NSError *error = nil ;
         self.restaurants = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:request error:&error]];
-        /*
-         NSLog(@"%d****************************************", [self.restaurants count]);
-        for (Restaurant *msgData in self.restaurants) {
-            NSLog(@"name:%@  address:%@" ,msgData.name , msgData.address);
-        }
-         */
+
         self.annotations = [self mapAnnotations];
         //NSLog(@"%d in setManagedObjectContext",[self.annotations count]);
-        [self updateMapView];
         //NSLog(@"%d in the array",[self.restaurants count]);
         //NSLog(@"loadDataFormDataDocument did!");
-        if (![self.restaurants count]) {
-            //NSLog(@"准备重新读取数据");
-            [self refresh];
-        }
     }else{
+        NSLog(@"mangedObjectContext出错，读取文件失败");
         self.restaurants = nil;
         //NSLog(@"dont have document");
     }
 }
+
+-(void)useToSaveDocument
+{
+    NSURL *url = [[[NSFileManager defaultManager ] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Document"];
+    UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+    
+    if(![[NSFileManager defaultManager] fileExistsAtPath:[url path]]){
+        //create file
+        [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            if (success) {
+                self.managedObjectContext = document.managedObjectContext;
+                [self saveToDocument:self.restaurants];
+                //NSLog(@"Creating file success ");
+            }else
+            {
+                NSLog(@"Creating file error");
+            }
+        }];
+    }else
+    {
+        self.managedObjectContext = document.managedObjectContext;
+        [self saveToDocument:self.restaurants];
+    }
+}
+
+
 -(void) useDocument
 {
     NSURL *url = [[[NSFileManager defaultManager ] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -68,7 +87,7 @@
            if (success) {
                self.managedObjectContext = document.managedObjectContext;
                 //NSLog(@"Creating file success ");
-               [self refresh];
+               [self refreshLocalData];
            }else
            {
                //NSLog(@"Creating file error");
@@ -79,10 +98,6 @@
         [document openWithCompletionHandler:^(BOOL success) {
             self.managedObjectContext = document.managedObjectContext;
             [self loadDataFromDataDocument:self.managedObjectContext];
-            /*
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"test" message:@"load message" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-            [alert show];
-             */
         }];
     }else{
         //try to use it
@@ -93,14 +108,21 @@
 
 -(void) saveToDocument:(NSMutableArray *)restauArray
 {
-    for (NSDictionary *restaurant in restauArray) {
-        [Restaurant restaurantWithFirebaseInfo:restaurant inManagedObjectContext:self.managedObjectContext];
+    if (!restauArray||[restauArray count] == 0) {
+        NSLog(@"error in saveToDocument");
+    }else{
+        [self.managedObjectContext deletedObjects];
+        NSLog(@"删除全部数据");
+        for (NSDictionary *restaurant in restauArray) {
+            [Restaurant restaurantWithFirebaseInfo:restaurant inManagedObjectContext:self.managedObjectContext];
+        }
+        NSLog(@"数据存储完毕");
+        //NSLog(@"Save to document success");
+        [self loadDataFromDataDocument:self.managedObjectContext];
     }
-    //NSLog(@"Save to document success");
-    [self loadDataFromDataDocument:self.managedObjectContext];
+
 }
 
-/*
 
 -(void) refresh
 {
@@ -135,9 +157,10 @@
     }];
 
 }
-*/
+
 //测试本地文件
--(void) refresh
+
+-(void) refreshLocalData
 {
     if (!self.restaurants) {
         self.restaurants = [[NSMutableArray alloc] init];
@@ -155,9 +178,42 @@
             [self.restaurants addObject:item];
         }
     }
-    [self saveToDocument:self.restaurants];
-    
+    [self useToSaveDocument];
 }
+-(void) refresh
+{
+    NSError *error;
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/64140421/shakeparis-export.json"]];
+    NSData *reponse = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    //NSLog(@"%@",reponse);
+    //NSLog(@"long of the jdata = %d",[jdata length]);
+    if (!reponse) {
+         NSLog(@"调用本地文件");
+        [self useDocument];
+    }else
+    {
+        self.restaurants = [NSJSONSerialization JSONObjectWithData:reponse options:kNilOptions error:&error];
+        NSLog(@"%d---",[self.restaurants count]);
+        if (!self.restaurants)
+        {
+            //NSLog(@"Error parsing JSON: %@",e);
+            //加载的不成功调用本地文件
+            NSLog(@"调用本地文件");
+            [self useDocument];
+        }else
+        {
+            //for (Restaurant *item in jsonArray) {
+                //NSLog(@"Item: %d",[jsonArray count]);
+                //[self.restaurants addObject:item];
+            NSLog(@"数据下载完毕，准备存入文档");
+            //[self saveToDocument:self.restaurants];
+            [self useToSaveDocument];
+        }
+    }
+
+}
+ */
+//测试在线文件
 
 /*
 -(void)restaurantWithFireBase
@@ -194,8 +250,8 @@
     self.locationMangager.distanceFilter = 100.0f;
     [self.locationMangager startUpdatingLocation];
     MKCoordinateSpan theSpan;
-    theSpan.latitudeDelta = 0.07;
-    theSpan.longitudeDelta = 0.07;
+    theSpan.latitudeDelta = 0.03;
+    theSpan.longitudeDelta = 0.03;
     MKCoordinateRegion theRegion;
     theRegion.center = [[self.locationMangager location] coordinate];
     theRegion.span = theSpan;
@@ -215,12 +271,22 @@
     [self.mapView setRegion:theRegion];
 }
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    MKCoordinateRegion theRegion;
+    MKCoordinateSpan theSpan;
+    theSpan.latitudeDelta = 0.03;
+    theSpan.longitudeDelta = 0.03;
+    theRegion.center = [newLocation coordinate];
+    theRegion.span = theSpan;
+    [self.mapView setRegion:theRegion];
+}
 
 -(NSArray *)mapAnnotations
 {
     //[self initRestaurantsArray];
     NSMutableArray *annotations = [NSMutableArray array];
-    for (Restaurant *restaurant in self.restaurants) {
+    for (LocalRestaurant *restaurant in self.restaurants) {
         [annotations addObject:[RestauAnnotation annotationForRestaurant:restaurant]];
     }
     return annotations;
@@ -228,7 +294,7 @@
 -(void)setRestaurants:(NSMutableArray *)restaurants
 {
     _restaurants = restaurants;
-    [Restaurant setRestaurants:restaurants];
+    [LocalRestaurant setRestaurants:restaurants];
     [self updateMapView];
 }
 
@@ -246,10 +312,10 @@
 
 -(void)updateMapView
 {
-    if (self.mapView.annotations) {
-        [self.mapView removeAnnotations:self.mapView.annotations];
-    }
     if (self.annotations) {
+        if (self.mapView.annotations) {
+            [self.mapView removeAnnotations:self.mapView.annotations];
+        }
         [self.mapView addAnnotations: self.annotations];
         //NSLog(@"%d in array annotations",[self.annotations count]);
     }
@@ -266,22 +332,34 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewWillAppear:YES];
 }
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    self.restaurants = [LocalRestaurant getRestaurants];
+    self.mapView.delegate = self;
+    self.annotations = [self mapAnnotations];
+    /*
     if (!self.managedObjectContext) {
         [self useDocument];
     }
-    self.mapView.delegate = self;
+     */
+    
     self.spinner= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self currentLocation];
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("version check", NULL);
+    dispatch_async(downloadQueue, ^{
+        if ([self onCheckVersion]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self alertForNewVersion];
+            });
+        };
+    });
+    [super viewDidLoad];
      //NSLog(@"%d----------------------------", [self.restaurants count]);
 	
     // Do any additional setup after loading the view.
-}
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -374,4 +452,46 @@
         [segue.destinationViewController initWithRestaurant:self.restauAnnotation.restaurant];
     }
 }
+
+-(BOOL)onCheckVersion
+{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *appVersion = [infoDic objectForKey:@"CFBundleVersion"];
+    
+    NSString *URL =@"http://itunes.apple.com/lookup?id=641363963";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:URL]];
+    [request setHTTPMethod:@"POST"];
+    NSHTTPURLResponse *urlResponse = nil;
+    NSError *error = nil;
+    NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+    if (jsonData) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        NSArray *infoArray = [dic objectForKey:@"results"];
+        if ([infoArray count]) {
+            NSDictionary *releaseInfo = [infoArray objectAtIndex:0];
+            NSString *lastVersion = [releaseInfo objectForKey:@"version"];
+            
+            NSLog(@"current version :%@\n last version %@",appVersion,lastVersion);
+            if (lastVersion) {
+                if (![lastVersion isEqualToString:appVersion]) {
+                    return YES;
+                }
+            }
+        }
+    }
+    return NO;
+}
+-(void)alertForNewVersion
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发现新的版本!!" message: @"A new version of app is available to download" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Download", nil];
+    [alert show];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/chi-zai-ba-li/id641363963?ls=1&mt=8"]];
+    }
+}
+
 @end

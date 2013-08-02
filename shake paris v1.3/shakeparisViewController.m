@@ -7,6 +7,7 @@
 //
 
 #import "shakeparisViewController.h"
+#import "LocalRestaurant.h"
 
 
 @interface shakeparisViewController ()
@@ -19,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.restaurants = [Restaurant getRestaurants];
+    self.restaurants = [LocalRestaurant getRestaurants];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -95,7 +96,7 @@
 }
 
 //随即餐馆获取
--(Restaurant *) randomRestaurant
+-(LocalRestaurant *) randomRestaurant
 {
     int x = arc4random() % [self.restaurants count];
     return [self.restaurants objectAtIndex:x];
